@@ -9,14 +9,14 @@ import json
 if os.path.dirname(os.path.dirname(os.path.abspath(__file__))) not in sys.path:
     sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from iris_model.iris_predict import IrisSVCModel
+from iris_model.iris_predict import IrisModel
 
 
 class TestIrisSVCModel(unittest.TestCase):
     def test1(self):
         """ testing the __init__() method """
         # arrange, act
-        model = IrisSVCModel()
+        model = IrisModel()
 
         # assert
         self.assertTrue(type(model._svm_model) is svm.SVC)
@@ -29,7 +29,7 @@ class TestIrisSVCModel(unittest.TestCase):
         # act
         exception_raised = False
         try:
-            validated_data = IrisSVCModel.input_schema.validate(data)
+            validated_data = IrisModel.input_schema.validate(data)
         except SchemaError as e:
             exception_raised = True
 
@@ -47,7 +47,7 @@ class TestIrisSVCModel(unittest.TestCase):
         # act
         exception_raised = False
         try:
-            validated_data = IrisSVCModel.input_schema.validate(data)
+            validated_data = IrisModel.input_schema.validate(data)
         except SchemaError as e:
             exception_raised = True
 
@@ -62,7 +62,7 @@ class TestIrisSVCModel(unittest.TestCase):
         # act
         exception_raised = False
         try:
-            validated_data = IrisSVCModel.output_schema.validate(data)
+            validated_data = IrisModel.output_schema.validate(data)
         except SchemaError as e:
             exception_raised = True
 
@@ -77,7 +77,7 @@ class TestIrisSVCModel(unittest.TestCase):
         # act
         exception_raised = False
         try:
-            validated_data = IrisSVCModel.output_schema.validate(data)
+            validated_data = IrisModel.output_schema.validate(data)
         except SchemaError as e:
             exception_raised = True
 
@@ -87,7 +87,7 @@ class TestIrisSVCModel(unittest.TestCase):
     def test6(self):
         """ testing the predict() method throws schema exception when given bad data """
         # arrange
-        model = IrisSVCModel()
+        model = IrisModel()
 
         # act
         exception_raised = False
@@ -102,7 +102,7 @@ class TestIrisSVCModel(unittest.TestCase):
     def test7(self):
         """ testing the predict() method with good data"""
         # arrange
-        model = IrisSVCModel()
+        model = IrisModel()
 
         # act
         prediction = model.predict(data={'sepal_length': 1.0,
@@ -112,7 +112,7 @@ class TestIrisSVCModel(unittest.TestCase):
 
         exception_raised = False
         try:
-            IrisSVCModel.output_schema.validate(prediction)
+            IrisModel.output_schema.validate(prediction)
         except SchemaError as e:
             exception_raised = True
 
@@ -125,7 +125,7 @@ class TestIrisSVCModel(unittest.TestCase):
     def test8(self):
         """ testing JSON schema generation """
         # arrange
-        model = IrisSVCModel()
+        model = IrisModel()
 
         # act
         json_schema = model.output_schema.json_schema("https://example.com/my-schema.json")
@@ -137,7 +137,7 @@ class TestIrisSVCModel(unittest.TestCase):
     def test9(self):
         """ testing the properties of the model object """
         # arrange
-        model = IrisSVCModel()
+        model = IrisModel()
 
         # act
         name = model.name

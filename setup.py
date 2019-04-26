@@ -1,14 +1,11 @@
-from setuptools import setup
+from distutils.core import setup
+
+from iris_model import __version__
 
 setup(
-    name="ml_model",
-    version='0.1',
-    py_modules=['hello'],
-    install_requires=[
-        'Click',
-    ],
-    entry_points='''
-        [console_scripts]
-        myhello=hello:cli
-    ''',
+    name='iris_model',
+    version=__version__,
+    packages=['iris_model'],
+    license='MIT',
+    long_description=open('README.txt').read(),
 )

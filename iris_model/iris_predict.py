@@ -1,13 +1,13 @@
 import os
 import pickle
-from schema import Schema, Or
+from schema import Schema
 from numpy import array
 
 from ml_model_abc import MLModel
 from iris_model import __version__
 
 
-class IrisSVCModel(MLModel):
+class IrisModel(MLModel):
     """ A demonstration of how to use the MLModel base class """
     # a display name for the model
     name = "Iris Model"
@@ -48,9 +48,9 @@ class IrisSVCModel(MLModel):
     def predict(self, data):
         """ Method to make a prediction with the Iris model.
 
-        :param data: data for making a prediction with the Iris model.
+        :param data: Data for making a prediction with the Iris model. Object must meet requirements of the input schema.
         :type data: dict
-        :rtype: dict
+        :rtype: dict -- The result of the prediction, the output object will meet the requirements of the output schema.
 
         """
         # calling the super method to validate against the input_schema
