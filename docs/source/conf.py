@@ -6,7 +6,7 @@ sys.path.insert(0, os.path.abspath('../../'))
 
 
 # -- Project information -----------------------------------------------------
-project = 'mlmodel-base-class-improvements'
+project = 'ML Model Base Class Improvements'
 copyright = '2019, Brian Schmidt'
 author = 'Brian Schmidt'
 
@@ -28,9 +28,9 @@ html_static_path = ['_static']
 
 # this code exports the input and output schema info to a json schema file
 # the json schema files are then used to auto generate documentation
-from iris_model.iris_predict import IrisSVCModel
-input_json_schema_string = json.dumps(IrisSVCModel.input_schema.json_schema("https://example.com/input-schema.json"))
-output_json_schema_string = json.dumps(IrisSVCModel.output_schema.json_schema("https://example.com/output-schema.json"))
+from iris_model.iris_predict import IrisModel
+input_json_schema_string = json.dumps(IrisModel.input_schema.json_schema("https://example.com/input-schema.json"))
+output_json_schema_string = json.dumps(IrisModel.output_schema.json_schema("https://example.com/output-schema.json"))
 
 with open(os.path.abspath('../build/input_schema.json'), "w") as file:
     file.write(input_json_schema_string)
