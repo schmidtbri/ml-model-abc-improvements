@@ -3,11 +3,16 @@ Welcome to mlmodel-base-class-improvements's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Iris Model:
 
-   ml_model_abc.rst
    iris_predict.rst
    iris_train.rst
+
+.. toctree::
+   :maxdepth: 2
+   :caption: MLModel Base Class:
+
+   ml_model_abc.rst
 
 
 Indices and tables

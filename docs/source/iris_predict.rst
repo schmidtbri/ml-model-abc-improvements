@@ -14,7 +14,7 @@ Iris Model Output Schema
 Iris Model Prediction Code
 **************************
 
-.. autoclass:: iris_model.iris_predict.IrisSVCModel
+.. autoclass:: iris_model.iris_predict.IrisModel
    :members:
 
    .. automethod:: __init__
