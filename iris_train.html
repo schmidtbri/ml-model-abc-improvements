@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Iris Model Train Module &mdash; ML Model Base Class Improvements 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ML Model Abstract Base Class" href="ml_model_abc.html" />
+    <link rel="prev" title="Iris Model Predict Module" href="iris_predict.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ML Model Base Class Improvements
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Iris Model:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="iris_predict.html">Iris Model Predict Module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Iris Model Train Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#iris-training-code-cli-documentation">Iris Training Code CLI Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Named Arguments">Named Arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#iris-training-code-documentation">Iris Training Code Documentation</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">MLModel Base Class:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ml_model_abc.html">ML Model Abstract Base Class</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ML Model Base Class Improvements</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Iris Model Train Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/iris_train.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="iris-model-train-module">
+<h1>Iris Model Train Module<a class="headerlink" href="#iris-model-train-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="iris-training-code-cli-documentation">
+<h2>Iris Training Code CLI Documentation<a class="headerlink" href="#iris-training-code-cli-documentation" title="Permalink to this headline">¶</a></h2>
+<p>This documentation shows how to train the Iris model through the CLI interface.</p>
+<p><p>Command to train the Iris model.</p>
+</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">iris_train</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">gamma</span> <span class="n">GAMMA</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">c</span> <span class="n">C</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="section" id="Named Arguments">
+<h3>Named Arguments<a class="headerlink" href="#Named Arguments" title="Permalink to this headline">¶</a></h3>
+<dl class="option-list">
+<dt><kbd>-gamma</kbd></dt>
+<dd><p>Gamma value used to train the SVM model.</p>
+</dd>
+<dt><kbd>-c</kbd></dt>
+<dd><p>C value used to train the SVM model.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="iris-training-code-documentation">
+<h2>Iris Training Code Documentation<a class="headerlink" href="#iris-training-code-documentation" title="Permalink to this headline">¶</a></h2>
+<p>This documentation shows how to train the Iris model by importing the code directly.</p>
+<span class="target" id="module-iris_model.iris_train"></span><dl class="function">
+<dt id="iris_model.iris_train.argument_parser">
+<code class="descclassname">iris_model.iris_train.</code><code class="descname">argument_parser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#iris_model.iris_train.argument_parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method creates and returns the argument parser used for parsing the cli arguments.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is only used to auto generate the CLI documentation.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="iris_model.iris_train.train">
+<code class="descclassname">iris_model.iris_train.</code><code class="descname">train</code><span class="sig-paren">(</span><em>gamma=0.001</em>, <em>C=100.0</em><span class="sig-paren">)</span><a class="headerlink" href="#iris_model.iris_train.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to train, serialize, and save the Iris model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gamma</strong> (<em>float</em>) – gamma parameter used by the SVM fit method.</p></li>
+<li><p><strong>C</strong> (<em>float</em>) – C parameter used by the SVM fit method.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None – function will save trained model to the iris_model/model_files directory</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This code is from: <a class="reference external" href="https://scikit-learn.org/stable/tutorial/basic/tutorial.html">https://scikit-learn.org/stable/tutorial/basic/tutorial.html</a></p>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ml_model_abc.html" class="btn btn-neutral float-right" title="ML Model Abstract Base Class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="iris_predict.html" class="btn btn-neutral float-left" title="Iris Model Predict Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Brian Schmidt
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
