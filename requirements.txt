@@ -6,6 +6,7 @@ certifi==2019.3.9
 chardet==3.0.4
 contextlib2==0.5.5
 docutils==0.14
+ghp-import==0.5.5
 idna==2.8
 imagesize==1.1.0
 Jinja2==2.10.1
