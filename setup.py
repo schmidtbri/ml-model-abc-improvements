@@ -31,7 +31,7 @@ setup(
     # executes the function `main` from this package when invoked:
     entry_points={
         'console_scripts': [
-            'iris_model=iris_model.iris_train:train',
+            'iris_train=iris_model.iris_train:train',
         ]
     }
 )
