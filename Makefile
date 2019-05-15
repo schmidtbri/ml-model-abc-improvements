@@ -13,16 +13,16 @@ clean-pyc: ## Remove python artifacts.
 	find . -name '*~' -exec rm -f {} +
 
 clean-build: ## Remove build artifacts.
-	rm --force --recursive build/
-	rm --force --recursive dist/
-	rm --force --recursive *.egg-info
+	rm -fr build/
+	rm -fr dist/
+	rm -fr *.egg-info
 
 test: clean-pyc ## Run unit test suite.
 	py.test --verbose --color=yes $(TEST_PATH)
 
 clean-docs: ## Delete all files in the docs html build directory
-	mkdir -p iris_model_docs
-	rm -rf iris_model_docs
+	mkdir -p docs/docs/build
+	rm -rf docs/docs/build
 
 html-docs: clean-docs ## Build the html documentation
 	sphinx-build -b html docs/source docs/build/html

@@ -12,7 +12,7 @@ if os.path.dirname(os.path.dirname(os.path.abspath(__file__))) not in sys.path:
 from iris_model.iris_predict import IrisModel
 
 
-class TestIrisSVCModel(unittest.TestCase):
+class IrisModelPredictTests(unittest.TestCase):
     def test1(self):
         """ testing the __init__() method """
         # arrange, act
@@ -150,8 +150,8 @@ class TestIrisSVCModel(unittest.TestCase):
         self.assertTrue(name == "Iris Model")
         self.assertTrue(qualified_name == "iris_model")
         self.assertTrue(description == "A machine learning model for predicting the species of a flower based on its measurements.")
-        self.assertTrue(major_version == "0")
-        self.assertTrue(minor_version == "1")
+        self.assertTrue(major_version == 0)
+        self.assertTrue(minor_version == 1)
 
 
 if __name__ == '__main__':

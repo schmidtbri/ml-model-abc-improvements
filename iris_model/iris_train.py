@@ -1,18 +1,19 @@
-
+import sys
+import os
+import pickle
+import argparse
+import traceback
 from sklearn import datasets
 from sklearn import svm
-import pickle
-import os
-import argparse
 
 
-def train(gamma=0.001, C=100.0):
+def train(gamma=0.001, c=100.0):
     """ Function to train, serialize, and save the Iris model.
 
     :param gamma: gamma parameter used by the SVM fit method.
     :type gamma: float
-    :param C: C parameter used by the SVM fit method.
-    :type C: float
+    :param c: c parameter used by the SVM fit method.
+    :type c: float
     :rtype: None -- function will save trained model to the iris_model/model_files directory
 
     .. note::
@@ -23,7 +24,7 @@ def train(gamma=0.001, C=100.0):
     iris = datasets.load_iris()
 
     # instantiating an SVM model from scikit-learn
-    svm_model = svm.SVC(gamma=gamma, C=C)
+    svm_model = svm.SVC(gamma=gamma, C=c)
 
     # fitting the model
     svm_model.fit(iris.data[:-1], iris.target[:-1])
@@ -53,4 +54,22 @@ if __name__ == "__main__":
     parser = argument_parser()
     results = parser.parse_args()
 
-    train(gamma=results.gamma, C=results.c)
+    try:
+        # we need these if else statements to handle hyperparameters that are not provided when the cli is called
+        if results.gamma is None and results.c is None:
+            train()
+        elif results.gamma is not None and results.c is None:
+            train(gamma=results.gamma)
+        elif results.gamma is None and results.c is not None:
+            train(c=results.c)
+        else:
+            train(gamma=results.gamma, c=results.c)
+    except Exception as e:
+        # printing the error to the screen
+        traceback.print_exc()
+        # returning error code
+        sys.exit(os.EX_SOFTWARE)
+
+    # returning code 0
+    sys.exit(os.EX_OK)
+

@@ -4,7 +4,7 @@ from schema import Schema
 from numpy import array
 
 from ml_model_abc import MLModel
-from iris_model import __version__
+from iris_model import __version_info__
 
 
 class IrisModel(MLModel):
@@ -19,10 +19,10 @@ class IrisModel(MLModel):
     description = "A machine learning model for predicting the species of a flower based on its measurements."
 
     # returning the major version of the package
-    major_version = __version__.split(".")[0]
+    major_version = __version_info__[0]
 
     # returning the minor version of the package
-    minor_version = __version__.split(".")[1]
+    minor_version = __version_info__[1]
 
     # stating the input schema of the model as a Schema object
     input_schema = Schema({'sepal_length': float,
