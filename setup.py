@@ -18,17 +18,14 @@ setup(
     author_email='6666331+schmidtbri@users.noreply.github.com',
     py_modules=["ml_model_abc"],
     packages=["iris_model"],
-    install_requires=['scikit-learn==0.21.0', 'schema==0.7.0'],
-    package_data={'iris_model': ['model_files/svc_model.pickle']},
+    install_requires=[
+        'scikit-learn==0.21.0',
+        'schema==0.7.0'
+    ],
+    package_data={'iris_model': [
+        'model_files/svc_model.pickle'
+    ]},
     include_package_data=True,
-
-    # To provide executable scripts, use entry points in preference to the
-    # "scripts" keyword. Entry points provide cross-platform support and allow
-    # `pip` to create the appropriate form of executable for the target
-    # platform.
-    #
-    # For example, the following would provide a command called `sample` which
-    # executes the function `main` from this package when invoked:
     entry_points={
         'console_scripts': [
             'iris_train=iris_model.iris_train:train',
