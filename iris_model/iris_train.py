@@ -50,10 +50,10 @@ def argument_parser():
     return parser
 
 
-if __name__ == "__main__":
+def main():
     parser = argument_parser()
     results = parser.parse_args()
-
+    print(results.c, results.gamma)
     try:
         # we need these if else statements to handle hyperparameters that are not provided when the cli is called
         if results.gamma is None and results.c is None:
@@ -72,4 +72,3 @@ if __name__ == "__main__":
 
     # returning code 0
     sys.exit(os.EX_OK)
-

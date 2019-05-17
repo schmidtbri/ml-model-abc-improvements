@@ -28,7 +28,7 @@ setup(
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'iris_train=iris_model.iris_train:train',
+            'iris_train=iris_model.iris_train:main',
         ]
     }
 )

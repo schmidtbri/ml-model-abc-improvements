@@ -60,7 +60,7 @@ class IrisModelTrainTest(unittest.TestCase):
         self.assertFalse(exception_raised)
 
     def test5(self):
-        """ testing the  """
+        """ testing the argument parser function """
         # arrange, act
         result = argument_parser()
 
