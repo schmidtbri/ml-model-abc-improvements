@@ -51,9 +51,10 @@ def argument_parser():
 
 
 def main():
+    """ Entry point for the cli interface """
     parser = argument_parser()
     results = parser.parse_args()
-    print(results.c, results.gamma)
+
     try:
         # we need these if else statements to handle hyperparameters that are not provided when the cli is called
         if results.gamma is None and results.c is None:
