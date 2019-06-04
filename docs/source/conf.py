@@ -6,7 +6,9 @@ sys.path.insert(0, os.path.abspath('../../'))
 
 # this code exports the input and output schema info to a json schema file
 # the json schema files are then used to auto generate documentation
+from iris_model import __version__
 from iris_model.iris_predict import IrisModel
+
 input_json_schema_string = json.dumps(IrisModel.input_schema.json_schema("https://example.com/input-schema.json"))
 output_json_schema_string = json.dumps(IrisModel.output_schema.json_schema("https://example.com/output-schema.json"))
 
@@ -27,7 +29,7 @@ copyright = '2019, Brian Schmidt'
 author = 'Brian Schmidt'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1.0'
+release = __version__
 
 
 # -- General configuration ---------------------------------------------------

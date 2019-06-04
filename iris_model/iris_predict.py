@@ -4,24 +4,16 @@ from schema import Schema
 from numpy import array
 
 from ml_model_abc import MLModel
-from iris_model import __version_info__
+from iris_model import __version_info__, __display_name__, __qualified_name__, __description__
 
 
 class IrisModel(MLModel):
     """ A demonstration of how to use the MLModel base class """
-    # a display name for the model
-    name = "Iris Model"
-
-    # returning the package name as the qualified name for the model
-    qualified_name = __name__.split(".")[0]
-
-    # a description of the model
-    description = "A machine learning model for predicting the species of a flower based on its measurements."
-
-    # returning the major version of the package
+    # accessing the package metadata
+    display_name = __display_name__
+    qualified_name = __qualified_name__
+    description = __description__
     major_version = __version_info__[0]
-
-    # returning the minor version of the package
     minor_version = __version_info__[1]
 
     # stating the input schema of the model as a Schema object

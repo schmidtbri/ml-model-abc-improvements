@@ -5,7 +5,7 @@ class MLModel(ABC):
     """ An abstract base class for ML model prediction code  """
     @property
     @abstractmethod
-    def name(self):
+    def display_name(self):
         """ This abstract property returns a display name for the model.
 
         .. note::

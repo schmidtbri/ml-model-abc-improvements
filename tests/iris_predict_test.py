@@ -136,22 +136,15 @@ class IrisModelPredictTests(unittest.TestCase):
 
     def test9(self):
         """ testing the properties of the model object """
-        # arrange
+        # arrange, act
         model = IrisModel()
 
-        # act
-        name = model.name
-        qualified_name = model.qualified_name
-        description = model.description
-        major_version = model.major_version
-        minor_version = model.minor_version
-
         # assert
-        self.assertTrue(name == "Iris Model")
-        self.assertTrue(qualified_name == "iris_model")
-        self.assertTrue(description == "A machine learning model for predicting the species of a flower based on its measurements.")
-        self.assertTrue(major_version == 0)
-        self.assertTrue(minor_version == 1)
+        self.assertTrue(model.display_name == "Iris Model")
+        self.assertTrue(model.qualified_name == "iris_model")
+        self.assertTrue(model.description == "A machine learning model for predicting the species of a flower based on its measurements.")
+        self.assertTrue(model.major_version == 0)
+        self.assertTrue(model.minor_version == 1)
 
 
 if __name__ == '__main__':
