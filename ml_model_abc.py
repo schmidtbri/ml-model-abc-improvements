@@ -32,11 +32,13 @@ class MLModel(ABC):
         raise NotImplementedError()
 
     @property
+    @abstractmethod
     def major_version(self):
         """ This abstract property returns the model's major version as a string. """
         raise NotImplementedError()
 
     @property
+    @abstractmethod
     def minor_version(self):
         """ This abstract property returns the model's minor version as a string. """
         raise NotImplementedError()
