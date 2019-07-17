@@ -3,14 +3,13 @@ import sys
 import unittest
 from sklearn import svm
 from schema import SchemaError
-import json
 
 # this adds the project root to the PYTHONPATH if its not already there, it makes it easier to run the unit tests
 if os.path.dirname(os.path.dirname(os.path.abspath(__file__))) not in sys.path:
     sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from iris_model.iris_predict import IrisModel
-
+from ml_model_abc import MLModelSchemaValidationException
 
 class IrisModelPredictTests(unittest.TestCase):
     def test1(self):
@@ -93,7 +92,7 @@ class IrisModelPredictTests(unittest.TestCase):
         exception_raised = False
         try:
             prediction = model.predict({'name': 'Sue', 'age': '28', 'gender': 'Squid'})
-        except SchemaError as e:
+        except MLModelSchemaValidationException as e:
             exception_raised = True
 
         # assert
@@ -113,7 +112,7 @@ class IrisModelPredictTests(unittest.TestCase):
         exception_raised = False
         try:
             IrisModel.output_schema.validate(prediction)
-        except SchemaError as e:
+        except MLModelSchemaValidationException as e:
             exception_raised = True
 
         # assert

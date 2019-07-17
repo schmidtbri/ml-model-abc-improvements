@@ -46,6 +46,7 @@ class IrisModel(MLModel):
 
         """
         # calling the super method to validate against the input_schema
+        # the MLModel predict() method will raise an exception if schema validation fails
         super().predict(data=data)
 
         # converting the incoming dictionary into a numpy array that can be accepted by the scikit-learn model

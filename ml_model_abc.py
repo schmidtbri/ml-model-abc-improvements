@@ -73,10 +73,19 @@ class MLModel(ABC):
             derived class.
 
         """
-        self.input_schema.validate(data)
+        try:
+            self.input_schema.validate(data)
+        except Exception as e:
+            raise MLModelSchemaValidationException("Failed to validate input data: {}".format(str(e)))
 
 
 class MLModelException(Exception):
     """ Exception type used to raise exceptions within MLModel derived classes """
-    def __init__(self, *args, **kwargs):
-        Exception.__init__(self, *args, **kwargs)
+    def __init__(self, *args):
+        Exception.__init__(self, *args)
+
+
+class MLModelSchemaValidationException(MLModelException):
+    """ Exception type used to raise schema validation exceptions within MLModel derived classes """
+    def __init__(self, *args):
+        MLModelException.__init__(self, *args)
