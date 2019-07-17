@@ -3,7 +3,7 @@ import pickle
 from schema import Schema
 from numpy import array
 
-from ml_model_abc import MLModel
+from ml_model_abc import MLModel, MLModelSchemaValidationException
 from iris_model import __version_info__, __display_name__, __qualified_name__, __description__
 
 
@@ -45,9 +45,10 @@ class IrisModel(MLModel):
         :rtype: dict -- The result of the prediction, the output object will meet the requirements of the output schema.
 
         """
-        # calling the super method to validate against the input_schema
-        # the MLModel predict() method will raise an exception if schema validation fails
-        super().predict(data=data)
+        try:
+            self.input_schema.validate(data)
+        except Exception as e:
+            raise MLModelSchemaValidationException("Failed to validate input data: {}".format(str(e)))
 
         # converting the incoming dictionary into a numpy array that can be accepted by the scikit-learn model
         X = array([data["sepal_length"], data["sepal_width"], data["petal_length"], data["petal_width"]]).reshape(1, -1)

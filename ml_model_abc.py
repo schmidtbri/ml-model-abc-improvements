@@ -68,15 +68,8 @@ class MLModel(ABC):
         :type data: object --  can be any python type
         :rtype: python object -- can be any python type
 
-        .. note::
-            This method can be used to validate the data parameter in the predict() method implementation in the
-            derived class.
-
         """
-        try:
-            self.input_schema.validate(data)
-        except Exception as e:
-            raise MLModelSchemaValidationException("Failed to validate input data: {}".format(str(e)))
+        raise NotImplementedError()
 
 
 class MLModelException(Exception):
