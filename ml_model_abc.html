@@ -215,11 +215,6 @@
 <dd class="field-even"><p>python object – can be any python type</p>
 </dd>
 </dl>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This method can be used to validate the data parameter in the predict() method implementation in the
-derived class.</p>
-</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -236,8 +231,14 @@ derived class.</p>
 
 <dl class="class">
 <dt id="ml_model_abc.MLModelException">
-<em class="property">class </em><code class="descclassname">ml_model_abc.</code><code class="descname">MLModelException</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ml_model_abc.MLModelException" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ml_model_abc.</code><code class="descname">MLModelException</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#ml_model_abc.MLModelException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception type used to raise exceptions within MLModel derived classes</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ml_model_abc.MLModelSchemaValidationException">
+<em class="property">class </em><code class="descclassname">ml_model_abc.</code><code class="descname">MLModelSchemaValidationException</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#ml_model_abc.MLModelSchemaValidationException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception type used to raise schema validation exceptions within MLModel derived classes</p>
 </dd></dl>
 
 </div>
