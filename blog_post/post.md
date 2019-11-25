@@ -1,9 +1,9 @@
-Title: A Simple ML Model Base Class
+Title: Improving the MLModel Base Class
 Date: 2019-06-12 09:21
 Category: Blog
 Slug: improving-the-mlmodel-base-class
 Authors: Brian Schmidt
-Summary: 
+Summary: In the previous blog post in this series I showed an object oriented design for a base class that does Machine Learning model prediction. The design of the base class was intentionally very simple so that I could show a simple example of how to use the base class with a scikit-learn model. I showed an easy way to publish schema metadata about the model inputs and outputs, and how to write model deserialization code so that it is hidden from the users of the model. I also showed how to hide the implementation details of the model by translating the user's input to the model's input so that the user of the model doesn't have to know how to use pandas or numpy. In this blog post I will continue to make improvements to the MLModel class and the example that I used in the previous post.
 
 This blog post continues with the ideas developed in the previous post
 in this series.
