@@ -59,7 +59,7 @@ before it is possible to deploy it into production systems. Luckily, we
 have a lot of tools to make the transition from experimental model to
 production model a smoother process. In this section I will show a few
 simple steps that will make the example model from [the last blog
-post](https://towardsdatascience.com/a-simple-ml-model-base-class-ab40e2febf13)
+post]({filename}/articles/a-simple-ml-model-base-class.md)
 into an installable Python package. To accomplish this, we will add
 version information to the package, add a command line interface to the
 training script, add Sphinx documentation, and add a setup.py file to
@@ -83,7 +83,7 @@ First of all we need to reorganize the code in the project a little bit:
 ```
 
 A lot of this code is shared with the [previous blog
-post](https://towardsdatascience.com/a-simple-ml-model-base-class-ab40e2febf13),
+post]({filename}/articles/a-simple-ml-model-base-class.md),
 but it is reorganized here to make it possible to have an ML model that
 is can be installed as a Python package.
 
