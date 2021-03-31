@@ -22,7 +22,7 @@ Pygments==2.7.4
 pyparsing==2.4.0
 pytest==4.5.0
 pytz==2019.1
-PyYAML==5.1
+PyYAML==5.4
 requests==2.21.0
 schema==0.7.0
 scikit-learn==0.21.0
