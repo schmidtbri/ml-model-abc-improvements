@@ -10,7 +10,7 @@ ghp-import==0.5.5
 idna==2.8
 imagesize==1.1.0
 Jinja2==2.11.3
-joblib==0.13.2
+joblib==1.2.0
 jsonpointer==2.0
 MarkupSafe==1.1.1
 more-itertools==7.0.0
